@@ -12,7 +12,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo> ${{ github.repository.owner }}
-  REGISTRY_REPO: ${{ github.repository.owner }}/test
+  REGISTRY_REPO: ${{ github.repository.owner }}test
 
 jobs:
   build:

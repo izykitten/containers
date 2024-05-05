@@ -12,8 +12,9 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
-  REGISTRY_ACCOUNT: ${{ github.repository.owner }}
-  REGISTRY_REPO: master
+  REGISTRY_REPO: ${{ github.repository }}
+  REGISTRY_ACCOUNT: ${{ github.repository }}
+  BRANCH: master
 
 jobs:
   build:
@@ -39,7 +40,7 @@ jobs:
         #if: github.event_name
         uses: docker/login-action@v3
         with:
-          registry: ${{ env.REGISTRY.ACCOUNT }}
+          registry: ${{ env.REGISTRY.LOGIN }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
@@ -49,7 +50,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.REGISTRY_ACCOUNT }}${{ env.REGISTRY_REPO }}
+          images: ${{ env.REGISTRY }}/${{ env.REGISTRY_ACCOUNT }}${{ env.BRANCH }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action

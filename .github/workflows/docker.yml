@@ -12,7 +12,8 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository.owner }}
+  REGISTRY_ACCOUNT: ${{ github.repository.owner }}
+  REGISTRY_NAME: master
 
 jobs:
   build:
@@ -48,7 +49,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/${{ branch }}${{ base_ref }}
+          images: ${{ env.REGISTRY }}/${{ env.REGISTRY_ACCOUNT }}/${{ env.REGISTRY_NAME }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action

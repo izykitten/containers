@@ -10,6 +10,11 @@ RUN rpm -v --import \
  && zypper -n in vlc vlc-codecs \
  && zypper clean
 
+# Install KDE
+
+RUN zypper -n install -t pattern kde kde_plasma \
+ && zypper clean
+
 # Install Sublime Merge
 
 RUN rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg \

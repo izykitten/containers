@@ -3,7 +3,7 @@ FROM ghcr.io/izykitten/tumbleweed-distrobox:tumbleweed-distrobox
 # Install packman packages
 
 RUN zypper -n addrepo -cfp 90 \
-     'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/Essentials/' packman-essentials
+     'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/Essentials/' packman-essentials \
      && zypper -n dup --from packman --allow-vendor-change \
      && zypper clean
 

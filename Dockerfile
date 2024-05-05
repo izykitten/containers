@@ -4,4 +4,5 @@ RUN zypper -n install \
               cnf \
               git \
               python3-pipx \
+           && zypper -n dup \
            && zypper clean

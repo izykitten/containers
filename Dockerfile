@@ -1,4 +1,4 @@
-FROM ghcr.io/izykitten/tumbleweed-distrobox:tumbleweed-distrobox
+FROM ghcr.io/izykitten/tumbleweed-distrobox:tumbleweed-distrobox as initial
 
 # Install packman-essentials and media codecs
 
@@ -32,5 +32,7 @@ RUN rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg \
 RUN zypper ref \
  && zypper -n dup \
  && zypper clean
+
+FROM scratch
 
 COPY --from=initial / /

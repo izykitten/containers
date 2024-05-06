@@ -17,7 +17,7 @@ RUN rpm -v --import \
 
 # Github CLI
 
-RUN zypper -n in gh \
+RUN zypper -n in gh nodejs-common yarn \
  && zypper clean
 
 RUN zypper -n in kdeconnect-kde \

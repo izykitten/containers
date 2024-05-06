@@ -12,7 +12,12 @@ RUN rpm -v --import \
 
 # Install KDE
 
-RUN zypper -n in -t pattern kde kde_plasma \
+#RUN zypper -n in -t pattern kde kde_plasma \
+# && zypper clean
+
+# Github CLI
+
+RUN zypper -n in gh \
  && zypper clean
 
 RUN zypper -n in kdeconnect-kde \

@@ -4,9 +4,9 @@ on:
 #  schedule:
 #    - cron: '00 04 * * *'
   push:
-    branches-ignore: [ "master" ]
+    branches-ignore: [ "template" ]
   pull_request:
-    branches-ignore: [ "master" ]
+    branches-ignore: [ "template" ]
 
 env:
   # Use docker.io for Docker Hub if empty

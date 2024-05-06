@@ -32,3 +32,5 @@ RUN rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg \
 RUN zypper ref \
  && zypper -n dup \
  && zypper clean
+
+COPY --from=initial / /

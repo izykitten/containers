@@ -12,8 +12,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo> ${{ github.repository }}
-  REGISTRY_ACCOUNT: izykitten
-  REGISTRY_REPO: tumbleweed-distrobox
+  REGISTRY_REPO: ${{ github.repository }}
 
 jobs:
   build:
@@ -49,7 +48,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.REGISTRY_ACCOUNT }}/${{ env.REGISTRY_REPO }}
+          images: ${{ env.REGISTRY }}/${{ env.REGISTRY_REPO }}
           tags: |
             # branch event
             type=ref,event=branch

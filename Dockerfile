@@ -18,6 +18,10 @@ RUN zypper -n in -t pattern kde kde_plasma \
 RUN zypper -n in kdeconnect-kde \
  && zypper clean
 
+ # Seafile
+
+ RUN zypper -n in seafile-client
+
 # Install Sublime Merge
 
 RUN rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg \

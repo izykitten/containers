@@ -26,8 +26,9 @@ RUN rpm -v --import \
  && zypper clean
  
 #Install: Github CLI, nodejs, yarn, Seafile, KDEConnect, Syncthing, VLC
-RUN zypper -n in gh \
-                 nodejs-common yarn \
-                 seafile-client kdeconnect-kde syncthing \
-                 vlc vlc-codecs \
-                 && zypper clean
+RUN zypper -n in \
+              gh git htop nano python3-pipx \
+              nodejs-common yarn \
+              seafile-client kdeconnect-kde syncthing \
+              vlc vlc-codecs \
+              && zypper clean

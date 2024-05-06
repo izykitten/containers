@@ -8,7 +8,7 @@ RUN zypper -n in --no-recommends -t pattern kde_plasma \
 RUN rpm -v --import \
     https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/Essentials/repodata/repomd.xml.key \
  && zypper -n addrepo -cfp 90 \
-   https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/Essentials/ packman-essentials \
+    https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/Essentials/ packman-essentials \
  && zypper -n dup --from packman-essentials --allow-vendor-change \
  && zypper clean
 

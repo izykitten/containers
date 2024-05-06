@@ -1,4 +1,4 @@
-FROM ghcr.io/izykitten/tumbleweed-distrobox:tumbleweed-distrobox
+FROM ghcr.io/izykitten/distroboxes:tumbleweed
 
 # Install packman-essentials and media codecs
 

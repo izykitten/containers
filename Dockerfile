@@ -12,8 +12,8 @@ RUN rpm -v --import \
 
 # Install KDE
 
-#RUN zypper -n in -t pattern kde kde_plasma \
-# && zypper clean
+RUN zypper -n in -t pattern kde_plasma \
+ && zypper clean
 
 # Github CLI
 

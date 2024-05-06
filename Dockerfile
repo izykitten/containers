@@ -20,7 +20,8 @@ RUN zypper -n in kdeconnect-kde \
 
  # Seafile
 
- RUN zypper -n in seafile-client
+ RUN zypper -n in seafile-client \
+  && zypper clean
 
 # Install Sublime Merge
 

@@ -10,13 +10,14 @@ RUN zypper -n addrepo -cfp 90 \
  && zypper -n --gpg-auto-import-keys dup --from packman-essentials --allow-vendor-change \
  && zypper clean
 
-#Install: Github CLI, nodejs, yarn, Seafile, KDEConnect, Syncthing, VLC, Element
+#Install: Github CLI, nodejs, yarn, Seafile, KDEConnect, Syncthing, VLC, Element, KeepassXC
 RUN zypper -n in \
               gh git htop nano python3-pipx \
               nodejs-common yarn \
               seafile-client kdeconnect-kde syncthing \
               vlc vlc-codecs \
               element-desktop \
+              keepassxc \
               && zypper clean
 
 # Install VSCode

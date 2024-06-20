@@ -1,7 +1,7 @@
 FROM registry.opensuse.org/opensuse/distrobox:latest
 
 # Install only required packages
-RUN sed -i 's/solver.onlyRequires = false/solver.onlyRequires = true/g' /etc/zypp/zypp.conf
+#RUN sed -i 's/solver.onlyRequires = false/solver.onlyRequires = true/g' /etc/zypp/zypp.conf
 
 # Install packman-essentials
 RUN zypper -n addrepo -cfp 90 \
@@ -13,9 +13,9 @@ RUN zypper -n addrepo -cfp 90 \
 RUN zypper -n in -t pattern kde kde_plasma \
  && zypper clean
 
-#Install: Github CLI, Seafile, KDEConnect, Syncthing, Element, KeepassXC, gocryptfs
+#Install: Github CLI, Seafile, KDEConnect, Syncthing, Element, KeepassXC, gocryptfs, cnf
 RUN zypper -n in \
-              gh git htop nano python3-pipx \
+              gh git cnf htop nano python3-pipx \
               seafile-client kdeconnect-kde syncthing \
               element-desktop \
               keepassxc \

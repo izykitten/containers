@@ -20,6 +20,7 @@ RUN zypper -n in \
               element-desktop \
               keepassxc \
               gocryptfs \
+              android-tools \
               && zypper clean
 
 # Install Sublime Merge
